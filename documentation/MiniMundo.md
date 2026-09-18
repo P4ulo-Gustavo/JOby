@@ -1,73 +1,80 @@
-# MiniMundo:
-    O Joby é uma plataforma onde os usuários podem se cadastrar e usar para auxiliar no gerenciamento de suas tarefas, permitindo o aumento de produtividade de seus usuários e organizações. 
-    O desenvolvimento desta aplicação será desenvolvida em módulos, definidos pela sua importância para o funcionamento do sistema, sendo o primeiro módulo para funcionalidades como:
-    --Cadastro do usuário e gerenciamento de conta/perfil;
-    --Criação e gerenciamento de tarefas;
-    --criação e gerenciamento de organizações;
-    --criação e gerenciamento de notas;
-    --Criar posts de aviso em modo organização;
-    --criação e gerenciamento de categorias;
-    --criação e gerenciamento de subgrupo/setores;
-    --Armazenamento em nuvem.
+# ===============================Representação da Documentação do MiniMundo=====================================
 
-    O segundo módulo vai trabalhar com questões de experiência de usuário:
-    --cahat interno de organizção;
-    --relatórios de tarefas;
-    --notificações de eventos e tarefas;
-    --linkar tarefas e notas;
+# 1. Visão Geral:
+    O JOby é uma plataforma web voltada para o gerenciamento de tarefas, anotações, organizações, comunicação e arquivos em nuvem. 
+    Ele visa auxiliar no aumento da produtividade tanto no uso individual (privativo) quanto no uso corporativo/em grupo (organizações).
+    O desenvolvimento é estruturado em módulos funcionais que contemplam desde a gestão pessoal de atividades até o gerenciamento avançado de equipes e colaboração.
 
+# 2. Módulos da Aplicação:
 
-    O usuário poderá criar sua conta, para isso será necessário alguns dados do próprio, tais como:
-    --nome completo;
-    --email;
-    --telefone;
+# 2.1 - Módulo 1 (Funcionalidades Principais & Gestão):
+    -- Cadastro e Autenticação de Usuário (gestão de conta, senha e controle de último login);
+    -- Gestão de Perfil do Usuário (identificador único, apelido e foto de perfil);
+    -- Gestão e Organização de Tarefas (privadas e organizacionais);
+    -- Gestão e Criação de Notas/Anotações (com suporte a lembretes e anexos);
+    -- Criação e Gerenciamento de Organizações (com fotos, membros e convites);
+    -- Gestão de Subgrupos e Setores de Organização (RH, Financeiro, TI, etc.);
+    -- Gestão de Seções/Categorias com cores personalizadas (uso privado ou em organização);
+    -- Mural de Avisos e Informativos para organizações e subgrupos;
+    -- Gestão de Armazenamento em Nuvem Privada e Organizacional;
+    -- Gestão de Colaboradores e Níveis de Permissão (leitura, escrita e gerenciamento).
 
-    O usuário tem um perfil, constituido de:
-    --nome completo;
-    --apelido;
-    --descricao;
-    --foto;
+# 2.2 - Módulo 2 (Experiência do Usuário & Comunicação):
+    -- Chat Interno em Grupo por Organização (canais de comunicação);
+    -- Chat Privado Direto entre Usuários (mensagens 1 para 1);
+    -- Notificações de Eventos, Tarefas, Lembretes, Convites e Avisos do Sistema;
+    -- Vinculação (Link) entre Notas e Tarefas para rápido acesso a conteúdos de apoio;
+    -- Emissão de Relatórios de Produtividade e Execução de Tarefas;
+    -- Monitoramento de Inatividade e Processo Automático de Inativação/Reativação de Conta.
 
+# 3. Detalhamento do Funcionamento por Entidade:
 
-    Após criar sua conta, o usuário poderá acessar a plataforma sempre que quiser, onde estará disponível a criar suas anotações, suas tarefas, suas organizações, seu gerenciamento na nuvem, chat, relatórios e notificações.
+# 3.1 - Usuários e Perfis:
+    -- O usuário realiza seu cadastro fornecendo nome completo, e-mail, telefone e senha.
+    -- Cada usuário possui um Perfil associado contendo um identificador único (#código gerado pelo sistema), apelido único e foto de perfil.
+    -- O sistema mantém registro de atividade via campo de último login para controle de inatividade.
 
-    Também é possivel criar categorias, que servem como uma forma de você filtrar tarefas e anotações através destas categorias, EX:
-        É criada uma categoria de "autentificação", onde todas as tarefas e anotações relacionadas aquela categoria ficarão dentro daquele bloco específico, ideal para as pessoas que são responsáveis por setores específicos, que neste caso seria o pessoal do backend e segurança;
+# 3.2 - Organizações, Convites e Permissões:
+    -- Usuários podem criar organizações definindo nome, descrição e foto da organização.
+    -- A entrada de novos membros ocorre mediante o envio de Convites (com status pendente, aceito ou recusado).
+    -- Cada membro na organização possui um conjunto de permissões (leitura, escrita, gerenciar).
+    -- A organização possui Armazenamento em Nuvem compartilhado e Mural de Avisos exclusivo.
 
-    Os subgrupos são basicamente setores de uma organização, igualmente a RH, administrativo, contabilidade, entre outros da vida real. 
-        Aqui a organização pode atribuir um funcionário a atuar em 1 ou mais setores. Isto atribui ao usuário uma melhor distribuição de tarefas pelo sistema, onde tarefas destinadas diretamente ao subgrupo/setor daquele funcionário serão as tarefas que aparecerão exclusivamente para eles ou com ênfase (aparecerão no topo com marcação especial) em relação as demais.
+# 3.3 - Subgrupos / Setores:
+    -- Organizações podem ser divididas em Subgrupos (setores como RH, TI, Administração).
+    -- Os colaboradores são associados a um ou mais subgrupos.
+    -- Tarefas, notas e murais podem ser marcados com restrição de subgrupo, garantindo visualização direcionada ou priorizada aos membros daquele setor.
 
-    As anotações devem ser constituidas de:
-        --titulo;
-        --texto;
-        --categorias;
-        --data de criacao;
-        --data de modificacao;
+# 3.4 - Seções (Categorias):
+    -- As Seções servem como categorias visuais para organizar tarefas, notas, murais e arquivos.
+    -- Cada seção possui um nome e uma cor identificadora.
+    -- Podem ser criadas para uso Pessoal (fora de organizações) ou para uso em Organizações específicas.
 
-    As tarefas são constituidas de: 
-        --titulo;
-        --descricao;
-        --categorias;
-   #     --subgrupo/setor (se feita por uma organização);
-   #     --realizante (quais usuários estão realizando, se feito em modo organização);
-        --status: (à realizar, realizada, em execução);
-        --data de criacao;
-        --data de modificação;
+# 3.5 - Notas e Anotações:
+    -- Constituídas de título, texto, anexo, categoria (seção) e data de lembrete.
+    -- Podem ser feitas em modo privativo ou associadas a uma organização/subgrupo.
 
-    As organizações são constituidas de:
+# 3.6 - Tarefas e Atribuições:
+    -- Constituídas de título, descrição, status (pendente, em progresso, concluída), prazo final, seção e limite de realizantes.
+    -- Podem ser atribuídas a 1 ou mais usuários (relação usuário-tarefa).
+    -- Podem ser criadas no modo privado ou organizacional.
 
-        --criador;
-        --nome;
-        --descricao;
-        --foto;
-        --membros;
-        --data de criacao;
-        --data de modificacao;
-        --data de exclusao;
+# 3.7 - Vinculação Nota & Tarefa:
+    -- Permite conectar diretamente uma Nota a uma Tarefa, possibilitando consultar anotações explicativas no momento de executar um trabalho.
 
-    
-    Todas as tarefas e anotações feitas pelo usuário de forma privativa(fora das organizações), só deverão ser vistas pelo próprio. Já as anotações e Tarefas feitas em uma organização, ficará a mostra para os todos. E as organizações podem acessar os relatórios das atuações dos usuários lá dentro (suas ações em notas, quantas tarefas já realizou, quais tarefas realizou, quais tarefas está realizando), além de relatórios gerais sobre todas as tarefas, podendo ser filtradas por atributos como Data, Título, categoria, subgrupo/setor, etc.
-    As organizações são criadas por um usuário, que realiza a solicitação de convite a outros usuários, ao aceitarem já participam da própria, la dentro a organização pode criar tarefas e deixá-las livres para quem quiser, ou simplesmente delegar diretamente as tarefas a usuários específicos (que são notificados, e a tarefa aparece em sua lista de afazeres), além de destinar subgrupos/setores aos colaboradores. Uma tarefa pode ser feita por uma ou mais pessoas, desde de eestejam dentro dos limites impostos pelo criador da tarefa (podendo ser x pessoas quaisquer, ou x pessoas específicas). organizações também possuem armazenamento em nuvem privada. Com direito a chat livre (aberto a todos os participantes). 
-    É possível conectar uma nota a uma tarefa, de modo que o usuário possa ter acesso a anotação que o ajudou na realização de uma tarefa específica. 
-    Se o usuário se mantiver mais de 12 meses sem logar, ele receberá uma notificação via email alertanto da exclusão de suas criações (tarefas, notas e armazenamento em nuvem) dentro da aplicação para a liberação de espaço e a inativação da conta. A pessoa terá 3 dias para logar e reativar a conta, caso contrário, todas suas criações serão apagadas para liberar espaço no armazenamento. 
-    Após a inativação da conta, será possível ativá-la novamente através da nossa página de reativação disponível pela aplicação.
+# 3.8 - Mural de Avisos:
+    -- Permite a publicação de posts de avisos em modo organização ou restritos a um subgrupo específico.
+
+# 3.9 - Armazenamento em Nuvem:
+    -- Permite o envio e gerenciamento de arquivos (título, anexo/caminho, seção e restrição de subgrupo).
+
+# 3.10 - Comunicação (Chat em Grupo e Chat Privado):
+    -- Chat em Grupo: canais abertos por organização, com permissões de administrador/usuário e suporte ao envio de anexos.
+    -- Chat Privado: conversas diretas entre 2 usuários dentro da plataforma com suporte a mensagens de texto e anexos.
+
+# 3.11 - Notificações:
+    -- Sistema de alertas para notificar usuários sobre novas tarefas atribuídas, lembretes de notas, convites de organização e mensagens.
+
+# 3.12 - Controle de Inatividade e Reativação:
+    -- Caso o usuário fique 12 meses sem realizar login (verificado pelo último login), o sistema envia uma notificação via e-mail informando sobre a futura inativação da conta e remoção dos dados para liberação de espaço.
+    -- O usuário terá 3 dias após a notificação para acessar a plataforma e reativar sua conta através da página de reativação; caso contrário, os dados privativos serão inativados/removidos.
